@@ -1,0 +1,29 @@
+<?php
+namespace Codazon\AjaxCartPro\Block\Product\Crosssell;
+
+/**
+ * Interceptor class for @see \Codazon\AjaxCartPro\Block\Product\Crosssell
+ */
+class Interceptor extends \Codazon\AjaxCartPro\Block\Product\Crosssell implements \Magento\Framework\Interception\InterceptorInterface
+{
+    use \Magento\Framework\Interception\Interceptor;
+
+    public function __construct(\Magento\Catalog\Block\Product\Context $context, array $data = [])
+    {
+        $this->___init();
+        parent::__construct($context, $data);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getImage($product, $imageId, $attributes = [])
+    {
+        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getImage');
+        if (!$pluginInfo) {
+            return parent::getImage($product, $imageId, $attributes);
+        } else {
+            return $this->___callPlugins('getImage', func_get_args(), $pluginInfo);
+        }
+    }
+}
