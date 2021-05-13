@@ -26,30 +26,4 @@ class Interceptor extends \Magento\ConfigurableProduct\Helper\Data implements \M
             return $this->___callPlugins('getGalleryImages', func_get_args(), $pluginInfo);
         }
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getOptions($currentProduct, $allowedProducts)
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getOptions');
-        if (!$pluginInfo) {
-            return parent::getOptions($currentProduct, $allowedProducts);
-        } else {
-            return $this->___callPlugins('getOptions', func_get_args(), $pluginInfo);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getAllowAttributes($product)
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getAllowAttributes');
-        if (!$pluginInfo) {
-            return parent::getAllowAttributes($product);
-        } else {
-            return $this->___callPlugins('getAllowAttributes', func_get_args(), $pluginInfo);
-        }
-    }
 }

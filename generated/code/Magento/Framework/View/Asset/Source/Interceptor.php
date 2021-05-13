@@ -17,19 +17,6 @@ class Interceptor extends \Magento\Framework\View\Asset\Source implements \Magen
     /**
      * {@inheritdoc}
      */
-    public function getFile(\Magento\Framework\View\Asset\LocalInterface $asset)
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getFile');
-        if (!$pluginInfo) {
-            return parent::getFile($asset);
-        } else {
-            return $this->___callPlugins('getFile', func_get_args(), $pluginInfo);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function getContent(\Magento\Framework\View\Asset\LocalInterface $asset)
     {
         $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getContent');
@@ -37,58 +24,6 @@ class Interceptor extends \Magento\Framework\View\Asset\Source implements \Magen
             return parent::getContent($asset);
         } else {
             return $this->___callPlugins('getContent', func_get_args(), $pluginInfo);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getSourceContentType(\Magento\Framework\View\Asset\LocalInterface $asset)
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getSourceContentType');
-        if (!$pluginInfo) {
-            return parent::getSourceContentType($asset);
-        } else {
-            return $this->___callPlugins('getSourceContentType', func_get_args(), $pluginInfo);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function findSource(\Magento\Framework\View\Asset\LocalInterface $asset)
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'findSource');
-        if (!$pluginInfo) {
-            return parent::findSource($asset);
-        } else {
-            return $this->___callPlugins('findSource', func_get_args(), $pluginInfo);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getContentType($path)
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getContentType');
-        if (!$pluginInfo) {
-            return parent::getContentType($path);
-        } else {
-            return $this->___callPlugins('getContentType', func_get_args(), $pluginInfo);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function findRelativeSourceFilePath(\Magento\Framework\View\Asset\LocalInterface $asset)
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'findRelativeSourceFilePath');
-        if (!$pluginInfo) {
-            return parent::findRelativeSourceFilePath($asset);
-        } else {
-            return $this->___callPlugins('findRelativeSourceFilePath', func_get_args(), $pluginInfo);
         }
     }
 }

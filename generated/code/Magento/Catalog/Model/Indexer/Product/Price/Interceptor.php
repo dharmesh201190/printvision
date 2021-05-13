@@ -30,19 +30,6 @@ class Interceptor extends \Magento\Catalog\Model\Indexer\Product\Price implement
     /**
      * {@inheritdoc}
      */
-    public function executeFull()
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'executeFull');
-        if (!$pluginInfo) {
-            return parent::executeFull();
-        } else {
-            return $this->___callPlugins('executeFull', func_get_args(), $pluginInfo);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function executeList(array $ids)
     {
         $pluginInfo = $this->pluginList->getNext($this->subjectType, 'executeList');

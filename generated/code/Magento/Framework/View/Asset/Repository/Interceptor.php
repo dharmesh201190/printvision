@@ -17,19 +17,6 @@ class Interceptor extends \Magento\Framework\View\Asset\Repository implements \M
     /**
      * {@inheritdoc}
      */
-    public function updateDesignParams(array &$params)
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'updateDesignParams');
-        if (!$pluginInfo) {
-            return parent::updateDesignParams($params);
-        } else {
-            return $this->___callPlugins('updateDesignParams', func_get_args(), $pluginInfo);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function createAsset($fileId, array $params = [])
     {
         $pluginInfo = $this->pluginList->getNext($this->subjectType, 'createAsset');
@@ -37,97 +24,6 @@ class Interceptor extends \Magento\Framework\View\Asset\Repository implements \M
             return parent::createAsset($fileId, $params);
         } else {
             return $this->___callPlugins('createAsset', func_get_args(), $pluginInfo);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getStaticViewFileContext()
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getStaticViewFileContext');
-        if (!$pluginInfo) {
-            return parent::getStaticViewFileContext();
-        } else {
-            return $this->___callPlugins('getStaticViewFileContext', func_get_args(), $pluginInfo);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function createSimilar($fileId, \Magento\Framework\View\Asset\LocalInterface $similarTo)
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'createSimilar');
-        if (!$pluginInfo) {
-            return parent::createSimilar($fileId, $similarTo);
-        } else {
-            return $this->___callPlugins('createSimilar', func_get_args(), $pluginInfo);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function createArbitrary($filePath, $dirPath, $baseDirType = 'static', $baseUrlType = 'static')
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'createArbitrary');
-        if (!$pluginInfo) {
-            return parent::createArbitrary($filePath, $dirPath, $baseDirType, $baseUrlType);
-        } else {
-            return $this->___callPlugins('createArbitrary', func_get_args(), $pluginInfo);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function createRelated($fileId, \Magento\Framework\View\Asset\LocalInterface $relativeTo)
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'createRelated');
-        if (!$pluginInfo) {
-            return parent::createRelated($fileId, $relativeTo);
-        } else {
-            return $this->___callPlugins('createRelated', func_get_args(), $pluginInfo);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function createRemoteAsset($url, $contentType)
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'createRemoteAsset');
-        if (!$pluginInfo) {
-            return parent::createRemoteAsset($url, $contentType);
-        } else {
-            return $this->___callPlugins('createRemoteAsset', func_get_args(), $pluginInfo);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getUrl($fileId)
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getUrl');
-        if (!$pluginInfo) {
-            return parent::getUrl($fileId);
-        } else {
-            return $this->___callPlugins('getUrl', func_get_args(), $pluginInfo);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getUrlWithParams($fileId, array $params)
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getUrlWithParams');
-        if (!$pluginInfo) {
-            return parent::getUrlWithParams($fileId, $params);
-        } else {
-            return $this->___callPlugins('getUrlWithParams', func_get_args(), $pluginInfo);
         }
     }
 }

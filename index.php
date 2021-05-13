@@ -18,10 +18,6 @@
  * See COPYING.txt for license details.
  */
 
-$_SERVER['MAGE_PROFILER'] = 'html';
-
-ini_set('display_errors', 1);
-//ini_set('memory_limit','-1');
 try {
     require __DIR__ . '/app/bootstrap.php';
 } catch (\Exception $e) {
@@ -36,6 +32,7 @@ try {
 HTML;
     exit(1);
 }
+
 $bootstrap = \Magento\Framework\App\Bootstrap::create(BP, $_SERVER);
 /** @var \Magento\Framework\App\Http $app */
 $app = $bootstrap->createApplication(\Magento\Framework\App\Http::class);

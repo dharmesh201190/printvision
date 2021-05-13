@@ -291,7 +291,7 @@ class Widget
 				    }
 				    break;
 				default:
-					continue;
+					break;
             }
             $widgetInstance = $this->widgetFactory->create();
 

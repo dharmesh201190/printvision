@@ -17,19 +17,6 @@ class Interceptor extends \Codazon\OneStepCheckout\Plugin\Checkout\Controller\In
     /**
      * {@inheritdoc}
      */
-    public function aroundExecute(\Magento\Checkout\Controller\Index\Index $subject, \Closure $proceed)
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'aroundExecute');
-        if (!$pluginInfo) {
-            return parent::aroundExecute($subject, $proceed);
-        } else {
-            return $this->___callPlugins('aroundExecute', func_get_args(), $pluginInfo);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function execute()
     {
         $pluginInfo = $this->pluginList->getNext($this->subjectType, 'execute');
@@ -50,58 +37,6 @@ class Interceptor extends \Codazon\OneStepCheckout\Plugin\Checkout\Controller\In
             return parent::dispatch($request);
         } else {
             return $this->___callPlugins('dispatch', func_get_args(), $pluginInfo);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getOnepage()
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getOnepage');
-        if (!$pluginInfo) {
-            return parent::getOnepage();
-        } else {
-            return $this->___callPlugins('getOnepage', func_get_args(), $pluginInfo);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getActionFlag()
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getActionFlag');
-        if (!$pluginInfo) {
-            return parent::getActionFlag();
-        } else {
-            return $this->___callPlugins('getActionFlag', func_get_args(), $pluginInfo);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getRequest()
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getRequest');
-        if (!$pluginInfo) {
-            return parent::getRequest();
-        } else {
-            return $this->___callPlugins('getRequest', func_get_args(), $pluginInfo);
-        }
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getResponse()
-    {
-        $pluginInfo = $this->pluginList->getNext($this->subjectType, 'getResponse');
-        if (!$pluginInfo) {
-            return parent::getResponse();
-        } else {
-            return $this->___callPlugins('getResponse', func_get_args(), $pluginInfo);
         }
     }
 }
